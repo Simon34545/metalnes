@@ -33,8 +33,22 @@ public:
         return &ptr; 
     }
     
+    T** GetAddressOf() {
+        if (ptr) {
+            ptr->Release();
+            ptr = nullptr;
+        }
+        return &ptr;
+    }
+    
     T* get() const { return ptr; }
     void reset() { *this = nullptr; }
+    
+    void SetPtr(T* p) {
+        if (ptr) ptr->Release();
+        ptr = p;
+        if (ptr) ptr->AddRef();
+    }
     
 private:
     T* ptr;

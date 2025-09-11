@@ -8,6 +8,11 @@
 #include <queue>
 #include <fstream>
 #include <streambuf>
+
+#ifdef WIN32
+#define NOMINMAX
+#include <windows.h>
+#endif
 #include <sstream>
 #include <functional>
 #include "Core/Math.h"
@@ -596,6 +601,10 @@ protected:
 
 // Context creation functions
 ContextPtr CreateNullContext();
+
+#ifdef WIN32
+ContextPtr CreateD3D11Context(HWND hwnd);
+#endif
 
 } // render
  

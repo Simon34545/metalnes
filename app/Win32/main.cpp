@@ -1,5 +1,6 @@
 #include <assert.h>
 #include <stdio.h>
+#define NOMINMAX
 #include <windows.h>
 #include <direct.h>
 #include "Core/File.h"
@@ -115,7 +116,7 @@ int main(int argc, const char *argv[])
         return -1;
     }
 
-    // Create rendering context
+    // Create rendering context  
     render::ContextPtr _context = render::CreateNullContext();
 
     std::vector<std::string> args;

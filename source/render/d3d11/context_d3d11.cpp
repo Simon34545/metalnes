@@ -10,6 +10,9 @@
 #include "../context.h"
 #include "AutoRef.h"
 
+// Simple profiling stub for now
+#define PROFILE_FUNCTION()
+
 
 #include <d3d11.h>
 // #include "..\..\external\dxsdk\Include\d3dx11.h"  // Missing DirectX SDK
@@ -98,10 +101,10 @@ namespace render {
 		// Define the input layout
 		static D3D11_INPUT_ELEMENT_DESC sVertexLayout[] =
 		{
-			{ "POSITION",  0, DXGI_FORMAT_R32G32B32_FLOAT, 0, offsetof(Vertex, x),      D3D11_INPUT_PER_VERTEX_DATA, 0 },
-			{ "COLOR",     0, DXGI_FORMAT_R8G8B8A8_UNORM, 0, offsetof(Vertex, Diffuse),         D3D11_INPUT_PER_VERTEX_DATA, 0 },
-			{ "TEXCOORD",  0, DXGI_FORMAT_R32G32_FLOAT, 0, offsetof(Vertex, tu),      D3D11_INPUT_PER_VERTEX_DATA, 0 },
-			{ "TEXCOORD",  1, DXGI_FORMAT_R32G32_FLOAT, 0, offsetof(Vertex, rad),      D3D11_INPUT_PER_VERTEX_DATA, 0 },
+			{ "POSITION",  0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, offsetof(Vertex, position),    D3D11_INPUT_PER_VERTEX_DATA, 0 },
+			{ "COLOR",     0, DXGI_FORMAT_R32G32B32A32_FLOAT, 0, offsetof(Vertex, color),       D3D11_INPUT_PER_VERTEX_DATA, 0 },
+			{ "TEXCOORD",  0, DXGI_FORMAT_R32G32_FLOAT,       0, offsetof(Vertex, texcoord0),   D3D11_INPUT_PER_VERTEX_DATA, 0 },
+			{ "TEXCOORD",  1, DXGI_FORMAT_R32G32_FLOAT,       0, offsetof(Vertex, texcoord1),   D3D11_INPUT_PER_VERTEX_DATA, 0 },
 		};
 
 
@@ -308,8 +311,8 @@ namespace render {
 
 
 
-			virtual void			BeginScene()  override;
-			virtual void			EndScene()  override;
+			virtual void			BeginScene();
+			virtual void			EndScene();
 
 			virtual void            Present()  override;
 
@@ -524,14 +527,15 @@ namespace render {
 
 
 
-			virtual void UploadIndexData(int indexCount, const IndexType* indices) override
+			virtual void UploadIndexData(size_t count, size_t stride, const IndexType* indices) override
 			{
-				_indexBuffer.Write(mD3DContext, indices, indexCount);
+				_indexBuffer.Write(mD3DContext, indices, count);
 			}
 
-			virtual void UploadVertexData(size_t vertexCount, const Vertex* v) override
+			virtual void UploadVertexData(size_t count, size_t stride, const void* data, int vertexTypeID) override
 			{
-				_vertexBuffer.Write(mD3DContext, v, vertexCount);
+				const Vertex* v = static_cast<const Vertex*>(data);
+				_vertexBuffer.Write(mD3DContext, v, count);
 			}
 
 		
@@ -2035,6 +2039,12 @@ namespace render {
 
 
 	} // namespace d3d11
+
+ContextPtr CreateD3D11Context(HWND hwnd)
+{
+    return std::make_shared<d3d11::DXContext>(hwnd);
+}
+
 } // namespace render
 
 
