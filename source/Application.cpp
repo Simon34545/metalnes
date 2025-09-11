@@ -52,9 +52,11 @@ static std::vector<RomInfo> s_rom_list;
 
 static nesrom_ptr load_rom(std::string rom_name)
 {
+    printf("Searching for ROM: '%s'\n", rom_name.c_str());
     for (auto rom_dir : s_rom_dirs)
     {
         std::string rom_path = Core::Path::Combine(rom_dir, rom_name);
+        printf("  Trying: '%s'\n", rom_path.c_str());
 
         nesrom_ptr rom = nesrom::LoadFromFile(rom_path);
         if (rom) {
@@ -243,6 +245,12 @@ void AppInit(render::ContextPtr context, std::string resource_dir, std::string d
     if (homeDir) {
         s_rom_dirs.push_back( Core::Path::Combine( homeDir,  "dev/nes/roms/") );
     }
+    
+    // Debug: Print ROM search directories
+    printf("ROM search directories:\n");
+    for (auto dir : s_rom_dirs) {
+        printf("  %s\n", dir.c_str());
+    }
 
 #if 1
 
@@ -256,22 +264,36 @@ void AppInit(render::ContextPtr context, std::string resource_dir, std::string d
     
     if (args.empty())
     {
-        
-
-//        load_system("NES Test Cart (Official Nintendo) (U) [!].nes");
-        load_system("Super Mario Bros. (W) [!].nes");
-//        load_system("Donkey Kong (JU).nes");
-//        load_system("Excitebike (JU).nes");
-
-//        load_system("nes-test-roms/apu_mixer/square.nes");
+        // Try to load the first available ROM file in any of the search directories
+        for (auto rom_dir : s_rom_dirs)
+        {
+            std::vector<std::string> files;
+            Core::Directory::GetDirectoryFiles(rom_dir, files, false);
+            
+            for (auto file : files)
+            {
+                if (file.find(".nes") != std::string::npos)
+                {
+                    // Extract just the filename from the full path
+                    size_t pos = file.find_last_of("/\\");
+                    std::string filename = (pos != std::string::npos) ? file.substr(pos + 1) : file;
+                    
+                    printf("Found ROM file: %s (filename: %s)\n", file.c_str(), filename.c_str());
+                    if (load_system(filename))
+                    {
+                        printf("Successfully loaded ROM: %s\n", filename.c_str());
+                        break;
+                    }
+                }
+            }
+            
+            if (!_system_list.empty())
+                break;
+        }
         
         if (_system_list.empty())
         {
-            load_system("nes-test-roms/instr_misc/rom_singles/01-abs_x_wrap.nes");
-            //      load_system("nes-test-roms/instr_misc/rom_singles/02-branch_wrap.nes");
-            //      load_system("nes-test-roms/instr_misc/rom_singles/03-dummy_reads.nes");
-            //      load_system("nes-test-roms/instr_misc/rom_singles/04-dummy_reads_apu.nes");
-
+            printf("No ROM files found in search directories. Place .nes files in ./roms/ directory.\n");
         }
     }
 #else

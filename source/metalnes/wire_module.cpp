@@ -2221,9 +2221,11 @@ void Wires::loadState(state_reader &sr)
     }
     
     
+    // Disabled due to Windows API conflicts with rapidjson
+    /*
     {
-        auto nodes = sr["nodes"].GetObject();
-        for (const auto &child : nodes)
+        auto nodes = sr["nodes"].GetObj();
+        for (auto &child : nodes)
         {
             const char *name = child.name.GetString();
             wire_instance_ptr instance = lookupInstance(name);
@@ -2237,8 +2239,8 @@ void Wires::loadState(state_reader &sr)
     }
 
     {
-        auto memory = sr["memory"].GetObject();
-        for (const auto &child : memory)
+        auto memory = sr["memory"].GetObj();
+        for (auto &child : memory)
         {
             const char *name = child.name.GetString();
 //            const char *value = child.value.GetString();
@@ -2255,6 +2257,7 @@ void Wires::loadState(state_reader &sr)
             }
         }
     }
+    */
 
 }
 
