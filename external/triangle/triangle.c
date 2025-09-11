@@ -341,7 +341,54 @@
 #include <string.h>
 #include <math.h>
 #ifndef NO_TIMER
+#ifdef _WIN32
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <time.h>
+
+/* Windows compatibility structures for gettimeofday */
+#ifndef _TIMEVAL_DEFINED
+#define _TIMEVAL_DEFINED
+struct timeval {
+    long tv_sec;
+    long tv_usec;
+};
+#endif
+
+#ifndef _TIMEZONE_DEFINED  
+#define _TIMEZONE_DEFINED
+struct timezone {
+    int tz_minuteswest;
+    int tz_dsttime;
+};
+#endif
+
+int gettimeofday(struct timeval *tv, struct timezone *tz) {
+    FILETIME ft;
+    unsigned __int64 tmpres = 0;
+    static int tzflag = 0;
+
+    if (tv != NULL) {
+        GetSystemTimeAsFileTime(&ft);
+        tmpres |= ft.dwHighDateTime;
+        tmpres <<= 32;
+        tmpres |= ft.dwLowDateTime;
+        tmpres /= 10;  /* convert to microseconds */
+        tmpres -= 11644473600000000ULL; /* Jan 1, 1601 to Jan 1, 1970 */
+        tv->tv_sec = (long)(tmpres / 1000000UL);
+        tv->tv_usec = (long)(tmpres % 1000000UL);
+    }
+
+    if (tz != NULL && !tzflag) {
+        _tzset();
+        tzflag = 1;
+    }
+
+    return 0;
+}
+#else
 #include <sys/time.h>
+#endif
 #endif /* not NO_TIMER */
 #ifdef CPU86
 #include <float.h>

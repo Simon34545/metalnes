@@ -1,0 +1,384 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|x64">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|x64">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{10B9A4FC-C3E6-3B17-957D-716877B3CD0A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <Platform>x64</Platform>
+    <ProjectName>hlsl2glsl</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\GPT5\metalNES\metalnes\build\external\hlsl2glslfork\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">hlsl2glsl.dir\Debug\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">hlsl2glsl</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\GPT5\metalNES\metalnes\build\external\hlsl2glslfork\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">hlsl2glsl.dir\Release\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">hlsl2glsl</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\GPT5\metalNES\metalnes\build\external\hlsl2glslfork\MinSizeRel\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">hlsl2glsl.dir\MinSizeRel\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">hlsl2glsl</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\GPT5\metalNES\metalnes\build\external\hlsl2glslfork\RelWithDebInfo\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">hlsl2glsl.dir\RelWithDebInfo\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">hlsl2glsl</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;_CRT_SECURE_NO_WARNINGS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;_CRT_SECURE_NO_WARNINGS;NDEBUG;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;_CRT_SECURE_NO_WARNINGS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MinSpace</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;_CRT_SECURE_NO_WARNINGS;NDEBUG;CMAKE_INTDIR="MinSizeRel"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <DebugInformationFormat>
+      </DebugInformationFormat>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;_CRT_SECURE_NO_WARNINGS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <MinimalRebuild></MinimalRebuild>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SupportJustMyCode></SupportJustMyCode>
+      <UseFullPaths>false</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;_CRT_SECURE_NO_WARNINGS;NDEBUG;CMAKE_INTDIR="RelWithDebInfo"</PreprocessorDefinitions>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;_HAS_ITERATOR_DEBUGGING=0;_SECURE_SCL=0;_CRT_SECURE_NO_WARNINGS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Midl>
+      <AdditionalIncludeDirectories>E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang;E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <Lib>
+      <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule E:/GPT5/metalNES/metalnes/external/hlsl2glslfork/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
+C:\Users\wowjinxy\AppData\Local\Programs\Python\Python310\Lib\site-packages\cmake\data\bin\cmake.exe -SE:/GPT5/metalNES/metalnes -BE:/GPT5/metalNES/metalnes/build --check-stamp-file E:/GPT5/metalNES/metalnes/build/external/hlsl2glslfork/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">E:\GPT5\metalNES\metalnes\build\external\hlsl2glslfork\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule E:/GPT5/metalNES/metalnes/external/hlsl2glslfork/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
+C:\Users\wowjinxy\AppData\Local\Programs\Python\Python310\Lib\site-packages\cmake\data\bin\cmake.exe -SE:/GPT5/metalNES/metalnes -BE:/GPT5/metalNES/metalnes/build --check-stamp-file E:/GPT5/metalNES/metalnes/build/external/hlsl2glslfork/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">E:\GPT5\metalNES\metalnes\build\external\hlsl2glslfork\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule E:/GPT5/metalNES/metalnes/external/hlsl2glslfork/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
+C:\Users\wowjinxy\AppData\Local\Programs\Python\Python310\Lib\site-packages\cmake\data\bin\cmake.exe -SE:/GPT5/metalNES/metalnes -BE:/GPT5/metalNES/metalnes/build --check-stamp-file E:/GPT5/metalNES/metalnes/build/external/hlsl2glslfork/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">E:\GPT5\metalNES\metalnes\build\external\hlsl2glslfork\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule E:/GPT5/metalNES/metalnes/external/hlsl2glslfork/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
+C:\Users\wowjinxy\AppData\Local\Programs\Python\Python310\Lib\site-packages\cmake\data\bin\cmake.exe -SE:/GPT5/metalNES/metalnes -BE:/GPT5/metalNES/metalnes/build --check-stamp-file E:/GPT5/metalNES/metalnes/build/external/hlsl2glslfork/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">E:\GPT5\metalNES\metalnes\build\external\hlsl2glslfork\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\Include\BaseTypes.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\Include\Common.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\Include\InfoSink.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\Include\InitializeGlobals.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\Include\InitializeParseContext.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\Include\intermediate.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\Include\PoolAlloc.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\Include\Types.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\SymbolTable.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslCommon.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslCommon.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslFunction.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslFunction.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslOutput.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslOutput.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslStruct.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslStruct.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslSymbol.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\glslSymbol.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\hlslCrossCompiler.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\hlslCrossCompiler.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\hlslLinker.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\hlslLinker.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\hlslSupportLib.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\hlslSupportLib.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\propagateMutable.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\propagateMutable.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\typeSamplers.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\GLSLCodeGen\typeSamplers.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslCommon.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslFunction.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslOutput.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslStruct.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslSymbol.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslCrossCompiler.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslLinker.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslSupportLib.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslPropagateMutable.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslTypeSamplers.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslCommon.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslFunction.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslOutput.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslStruct.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslSymbol.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslCrossCompiler.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslLinker.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslSupportLib.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslPropagateMutable.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MetalCodeGen\mslTypeSamplers.h" />
+    <None Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\include">
+    </None>
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\HLSL2GLSL.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\HLSL2MSL.cpp" />
+    <None Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\hlslang.l">
+    </None>
+    <None Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\hlslang.y">
+    </None>
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\InfoSink.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\Initialize.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\Initialize.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\Intermediate.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\intermOut.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\IntermTraverse.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\localintermediate.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\ParseHelper.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\ParseHelper.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\PoolAlloc.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\RemoveTree.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\RemoveTree.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\SymbolTable.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\ConstantFolding.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader_common.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader_internal.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader_lexer.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader_preprocessor.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\preprocessor\mojoshader.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\preprocessor\sourceloc.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\preprocessor\sourceloc.h" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows\osinclude.h" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\OSDependent\Windows\ossource.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\Gen_hlslang.cpp" />
+    <ClCompile Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\hlslang_tab.cpp" />
+    <ClInclude Include="E:\GPT5\metalNES\metalnes\external\hlsl2glslfork\hlslang\MachineIndependent\hlslang_tab.h" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="E:\GPT5\metalNES\metalnes\build\ZERO_CHECK.vcxproj">
+      <Project>{73E6717F-22FE-324A-9512-8E7A45844CAC}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

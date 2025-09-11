@@ -1,5 +1,5 @@
 
-cmake_minimum_required(VERSION 3.1)
+cmake_minimum_required(VERSION 3.10)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -35,6 +35,11 @@ set(TRIANGLE_SOURCE
         ${EXTERNAL_DIR}/triangle/triangle.c
         ${EXTERNAL_DIR}/triangle/tricall.c
       )
+
+if (WIN32)
+    # Disable timer functionality on Windows to avoid sys/time.h conflicts
+    add_compile_definitions(NO_TIMER)
+endif()
 
 
 set(COMMON_SOURCE
@@ -78,6 +83,7 @@ elseif (UNIX)
 
 elseif (WIN32)
     set(PLATFORM_SOURCE
+        ${COMMON_SOURCE_DIR}/Platform/Win32/CoreAudio_Win32.cpp
       )
 
 else()
@@ -191,9 +197,26 @@ elseif (UNIX)
 
 elseif (WIN32)
 
+    add_executable(MetalNes
+        ${TRIANGLE_SOURCE}
+        ${IMGUI_SOURCE}
+        ${COMMON_SOURCE}
+        ${PLATFORM_SOURCE}
+        ${APP_SOURCE_DIR}/Win32/main.cpp
+        ${APP_SOURCE_DIR}/Win32/keycode_win32.cpp
+        ${COMMON_SOURCE_DIR}/render/null/context_null.cpp
+        )
+
     target_link_libraries(
         MetalNes
         hlsl2glsl
+        d3d11
+        d3dcompiler
+        dxguid
+        winmm
+        dsound
+        ole32
+        oleaut32
     )
     
 else()

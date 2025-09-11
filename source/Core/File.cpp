@@ -113,7 +113,7 @@ namespace Core {
     bool Directory::Create(std::string path)
     {
     #if WIN32
-        return _mkdir(path.c_str(), 0755) == 0;
+        return _mkdir(path.c_str()) == 0;
     #else
         return mkdir(path.c_str(), 0755) == 0;
     #endif

@@ -4,6 +4,12 @@
 #include "render/context.h"
 #include "imgui_support.h"
 
+#ifdef _WIN32
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+#endif
+
 #include "Core/File.h"
 #include "logger.h"
 #include <cmath>

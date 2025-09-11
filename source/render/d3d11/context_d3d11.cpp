@@ -7,13 +7,12 @@
 #include <map>
 #include <vector>
 
-#include "context.h"
-#include "platform.h"
+#include "../context.h"
 #include "AutoRef.h"
 
 
 #include <d3d11.h>
-#include "..\..\external\dxsdk\Include\d3dx11.h"
+// #include "..\..\external\dxsdk\Include\d3dx11.h"  // Missing DirectX SDK
 #include <d3dcompiler.h>
 #include <D3D11Shader.h>
 //#include "..\..\external\dxsdk\Include\xnamath.h"
@@ -1493,25 +1492,8 @@ namespace render {
 
 		TexturePtr DXContext::CreateTextureFromFile(const char* name, const char* path)
 		{
-			//D3DX11_IMAGE_LOAD_INFO loadInfo;
-			ID3D11Resource* pResource;
-			HRESULT hr = D3DX11CreateTextureFromFile(
-				mD3DDevice, path, NULL, NULL, &pResource, NULL);
-			if (FAILED(hr))
-			{
-				return NULL;
-			}
-
-			// query texture from resource
-			ID3D11Texture2D* pD3DTexture = NULL;
-			pResource->QueryInterface(__uuidof(ID3D11Texture2D), (LPVOID*)&pD3DTexture);
-			pResource->Release();
-			if (pD3DTexture == NULL)
-			{
-				return NULL;
-			}
-
-			return std::make_shared<DXTexture>(this, name, pD3DTexture);
+			// TODO: Implement texture loading without D3DX11
+			return NULL;
 		}
 
 		TexturePtr DXContext::CreateRenderTarget(const char* name, int width, int height, PixelFormat format)
