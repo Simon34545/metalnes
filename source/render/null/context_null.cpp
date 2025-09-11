@@ -385,6 +385,13 @@ public:
     virtual void UploadVertexData(size_t count, size_t stride,  const void *v, int vertexTypeID) override {}
     virtual void DrawArrays(PrimitiveType primType, int start, int count) override {}
     virtual void DrawIndexed(PrimitiveType primType, int indexOffset, int indexCount) override {}
+    
+    // Missing abstract method implementations
+    virtual void GetImageDataAsync(TexturePtr texture, std::function<void(ImageDataPtr)> callback) override {}
+    virtual void SetVertexDescriptor(int index, const VertexDescriptor& descriptor) override {}
+    virtual BufferPtr CreateBuffer(size_t count, size_t stride, const void* data, int bufferTypeID) override { return nullptr; }
+    virtual void SetIndexBuffer(BufferPtr buffer) override {}
+    virtual void SetVertexBuffer(int index, BufferPtr buffer) override {}
 	
 protected:
     Matrix44 m_xform = Matrix44::Identity();
@@ -434,6 +441,11 @@ ShaderPtr     NullContext::CreateShader(const char *name)
 
 {
     return std::make_shared<NullShader>(shared_from_this());
+}
+
+ContextPtr CreateNullContext()
+{
+    return std::make_shared<NullContext>();
 }
 
 }

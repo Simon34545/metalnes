@@ -232,8 +232,17 @@ void AppInit(render::ContextPtr context, std::string resource_dir, std::string d
     s_data_dir = data_dir;
     s_system_def_dir = Core::Path::Combine(resource_dir, "data/system-def");
     
-    s_rom_dirs.push_back( Core::Path::Combine( getenv("HOME"),  "dev/nes/roms/") );
+    // Look for ROMs locally first
+    s_rom_dirs.push_back( Core::Path::Combine(resource_dir, "roms/") );
+    s_rom_dirs.push_back( "./roms/" );
     s_rom_dirs.push_back( Core::Path::Combine(resource_dir, "data/roms/") );
+    
+    // Then check user directory as fallback
+    const char* homeDir = getenv("HOME");
+    if (!homeDir) homeDir = getenv("USERPROFILE"); // Windows fallback
+    if (homeDir) {
+        s_rom_dirs.push_back( Core::Path::Combine( homeDir,  "dev/nes/roms/") );
+    }
 
 #if 1
 

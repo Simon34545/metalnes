@@ -594,5 +594,8 @@ protected:
 
 };
 
+// Context creation functions
+ContextPtr CreateNullContext();
+
 } // render
  
