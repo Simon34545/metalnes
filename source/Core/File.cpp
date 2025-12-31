@@ -88,7 +88,7 @@ namespace Core {
     
     bool File::ReadAllText(std::string path, std::string &text)
     {
-        FILE *file = fopen(path.c_str(), "rt");
+        FILE *file = fopen(path.c_str(), "rb");
         if (!file) return false;
         
         fseek(file, 0, SEEK_END);

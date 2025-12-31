@@ -7,6 +7,9 @@
 #include <map>
 #include <vector>
 
+#include "../../Core/Path.h"
+#include "../../Core/File.h"
+#include "../../Core/Log.h"
 #include "../context.h"
 #include "AutoRef.h"
 
@@ -701,7 +704,7 @@ namespace render {
 				return 0;
 			}*/
 
-			virtual void SetFloat(float f) override
+			/*virtual void SetFloat(float f) override
 			{
 				m_value.f1 = f;
 			}
@@ -715,7 +718,7 @@ namespace render {
 			virtual void SetMatrix(const Matrix44& m) override
 			{
 				*(Matrix44*)&m_value.m44 = m;
-			}
+			}*/
 
 #if 1
 			void Flush()
@@ -912,10 +915,10 @@ namespace render {
 			
 			void Dump()
 			{
-				LogPrint("buffer %s %d %d\n", _name.c_str(), _alignment, _size);
+				Log::Printf("buffer %s %d %d\n", _name.c_str(), _alignment, _size);
 				for (auto& field : _fields)
 				{
-					LogPrint("\tfield %s %s (%d)\n", GetTypeName(field.type), field.name.c_str(), field.offset);
+					Log::Printf("\tfield %s %s (%d)\n", GetTypeName(field.type), field.name.c_str(), field.offset);
 
 				}
 			}
@@ -1058,14 +1061,14 @@ namespace render {
 
 				HRESULT __stdcall Open(D3D_INCLUDE_TYPE IncludeType, LPCSTR pFileName, LPCVOID pParentData, LPCVOID* ppData, UINT* pBytes) override
 				{
-					std::string root = PathGetDirectory(m_path);
-					std::string path = PathCombine(root, pFileName);
+					std::string root = Core::Path::GetDirectory(m_path);
+					std::string path = Core::Path::Combine(root, pFileName);
 
 					*ppData = NULL;
 					*pBytes = 0;
 
 					std::string output;
-					if (!FileReadAllText(path, output)) {
+					if (!Core::File::ReadAllText(path, output)) {
 						return -1;
 					}
 
@@ -1134,7 +1137,7 @@ namespace render {
 						pErrorBlob->Release();
 					}
 
-					LogError("Could not compile shader with profile %s\n%s\n%s", source.profile.c_str(),
+					Log::Error("Could not compile shader with profile %s\n%s\n%s", source.profile.c_str(),
 						m_errors.c_str(), source.code.c_str());
 
 					return nullptr;
@@ -1372,7 +1375,7 @@ namespace render {
 				if (m_constant_xform_position)
 				{
 					const Matrix44& xform = context->GetTransform();
-					m_constant_xform_position->SetMatrix(xform);
+					//m_constant_xform_position->SetMatrix(xform);
 				}
 
 
@@ -1525,7 +1528,7 @@ namespace render {
 			return std::make_shared<DXTexture>(this, name, pD3DTexture);
 
 		}
-		TexturePtr DXContext::CreateTexture(const char* name, int width, int height, PixelFormat format, const uint32_t* data)
+		TexturePtr DXContext::CreateTexture(const char* name, int width, int height, PixelFormat format, const void* data)
 		{
 			D3D11_TEXTURE2D_DESC desc = { 0 };
 			desc.Width = width;
@@ -1715,7 +1718,7 @@ namespace render {
 					index_data[index_count++] = i + 2;
 					index_data[index_count++] = i + 1;
 				}
-				UploadIndexData(index_count, index_data);
+				UploadIndexData(index_count, 1, index_data);
 				DrawIndexed(PRIMTYPE_TRIANGLELIST, 0, index_count);
 				return;
 			}

@@ -1,5 +1,0 @@
-E:/GPT5/metalNES/metalnes/build/CMakeFiles/MetalNes.dir
-E:/GPT5/metalNES/metalnes/build/CMakeFiles/ALL_BUILD.dir
-E:/GPT5/metalNES/metalnes/build/CMakeFiles/ZERO_CHECK.dir
-E:/GPT5/metalNES/metalnes/build/external/hlsl2glslfork/CMakeFiles/hlsl2glsl.dir
-E:/GPT5/metalNES/metalnes/build/external/hlsl2glslfork/CMakeFiles/ALL_BUILD.dir
